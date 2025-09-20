@@ -46,6 +46,20 @@ heart.addEventListener('mouseleave', resetHeart);
 heart.addEventListener('touchstart', (e) => { e.preventDefault(); playHeart(); });
 heart.addEventListener('touchend', resetHeart);
 
+// Typewriter efekti
+function typeWriter(text, element, delay = 50) {
+  element.textContent = "";
+  let i = 0;
+  const interval = setInterval(() => {
+    element.textContent += text.charAt(i);
+    i++;
+    if (i >= text.length) {
+      clearInterval(interval);
+    }
+  }, delay);
+}
+
+
 // Tıklama olayı
 heart.addEventListener('click', () => {
   // İlk mesaj
