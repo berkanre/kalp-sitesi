@@ -65,7 +65,9 @@ body {
   pointer-events: none;
   word-wrap: break-word;
   white-space: pre-wrap;
+  z-index: 999;  /* 🔥 Mesajlar artık kalbin üstünde */
 }
+
 
 #message-top.show, #message-bottom.show {
   opacity: 1;
