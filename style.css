@@ -71,10 +71,11 @@ body {
   transform: scale(1.2);
 }
 
-/* 1. mesaj (kalbin üstünde) */
+/* 1. mesaj (sayfanın en üstünde) */
 #message-top {
-  top: calc(50% - 150px);
+  top: 20px;          /* ekranın en üstünden 20px aşağıda */
   font-size: 5vw;
+  z-index: 999;
 }
 
 /* 2. mesaj (kalbin altında) */
