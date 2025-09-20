@@ -35,7 +35,7 @@ heart.addEventListener('click', () => {
     messageTop.classList.remove('show');
 
     // Alt mesaj
-    messageBottom.textContent = " Canım sevgilim bugün benim için en mutlu gün. Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.Geleceğim, seninle olduğum her gün, saat, dakika, saniye farketmeksizin seninle olacağım için çok mutluyum.Bu mutluluğumuzu her daim yaşamak dileğiyle... Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki benimlesin";
+    messageBottom.textContent = "Canım sevgilim bugün benim için en mutlu gün. Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.Geleceğim, seninle olduğum her gün, saat, dakika, saniye farketmeksizin seninle olacağım için çok mutluyum.Bu mutluluğumuzu her daim yaşamak dileğiyle... Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki benimlesin";
     messageBottom.classList.add('show');
 
     // 2 saniye sonra alt mesaj kaybolur
