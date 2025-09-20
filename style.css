@@ -20,10 +20,8 @@ body {
 /* Kalp */
 .heart-real {
   position: relative;
-  width: 25vw;
-  max-width: 150px;
-  height: 23vw;
-  max-height: 138px;
+  width: clamp(100px, 25vw, 160px);
+  height: clamp(90px, 23vw, 140px);
   background: linear-gradient(145deg, #ff4b5c, #ff1e3c);
   border-radius: 60px 60px 0 0;
   transform: rotate(-45deg);
@@ -68,20 +66,19 @@ body {
 
 #message-top.show, #message-bottom.show {
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /* 1. mesaj (sayfanın en üstünde) */
 #message-top {
-  top: 20px;          /* ekranın en üstünden 20px aşağıda */
-  font-size: 5vw;
-  z-index: 999;
+  top: 5%;
+  font-size: clamp(18px, 5vw, 40px);
 }
 
 /* 2. mesaj (kalbin altında) */
 #message-bottom {
-  top: calc(50% + 150px);
-  font-size: clamp(14px, 2.5vw, 20px);
+  top: calc(50% + 20vh);
+  font-size: clamp(14px, 3vw, 22px);
   line-height: 1.5;
 }
 
