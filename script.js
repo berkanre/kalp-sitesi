@@ -4,9 +4,8 @@ const messageTop = document.getElementById('message-top');
 const messageBottom = document.getElementById('message-bottom');
 
 let heartInterval = null;
-let sparkleInterval = null;
 
-// İkinci mesajı burada belirle
+// İkinci mesaj burada yazılıyor
 const secondMessage = `
 Sen benim hayatımdaki en değerli kişisin. 
 Her anımda seni düşünüyorum ve kalbim her zaman seninle atıyor. 
@@ -48,43 +47,7 @@ heart.addEventListener('mouseleave', resetHeart);
 heart.addEventListener('touchstart', (e) => { e.preventDefault(); playHeart(); });
 heart.addEventListener('touchend', resetHeart);
 
-// Typewriter efekti
-function typeWriter(text, element, speed = 50) {
-  element.textContent = '';
-  let i = 0;
-
-  // Parlayan kalpler intervali
-  sparkleInterval = setInterval(() => {
-    createSparkle(element);
-  }, 200);
-
-  const interval = setInterval(() => {
-    element.textContent += text.charAt(i);
-    i++;
-    if (i >= text.length) {
-      clearInterval(interval);
-      clearInterval(sparkleInterval); // yazı bitince efekt durur
-    }
-  }, speed);
-  element.classList.add('show');
-}
-
-// Mesaj etrafında parlayan küçük kalpler
-function createSparkle(element) {
-  const sparkle = document.createElement('div');
-  sparkle.classList.add('small-heart');
-  sparkle.style.width = '15px';
-  sparkle.style.height = '15px';
-  const rect = element.getBoundingClientRect();
-  sparkle.style.left = `${rect.left + Math.random() * rect.width}px`;
-  sparkle.style.top = `${rect.top + Math.random() * rect.height}px`;
-  sparkle.style.background = `hsl(${Math.random() * 360}, 80%, 70%)`;
-  sparkle.style.animationDuration = '1.5s';
-  document.body.appendChild(sparkle);
-  sparkle.addEventListener('animationend', () => sparkle.remove());
-}
-
-// Kalbe tıklayınca mesajlar
+// Kalbe tıklanınca mesajlar
 heart.addEventListener('click', () => {
   // İlk kısa mesaj
   messageTop.textContent = "Seni Seviyorum 💖";
@@ -97,8 +60,9 @@ heart.addEventListener('click', () => {
     heart.style.animationPlayState = 'paused';
     clearInterval(heartInterval);
 
-    // Typewriter ile ikinci uzun mesaj ve parlayan kalpler
-    typeWriter(secondMessage, messageBottom, 50);
+    // İkinci mesaj direkt gösterilecek
+    messageBottom.textContent = secondMessage;
+    messageBottom.classList.add('show');
 
   }, 2000);
 });
