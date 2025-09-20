@@ -3,18 +3,18 @@ const sound = document.getElementById('heartbeat-sound');
 const messageTop = document.getElementById('message-top');
 const messageBottom = document.getElementById('message-bottom');
 
-const userInput = document.getElementById('user-message');
-const setButton = document.getElementById('set-message');
-
 let heartInterval = null;
 let sparkleInterval = null;
-let userMessage = "Sen benim için çok değerlisin ❤️"; // varsayılan mesaj
 
-// Kullanıcı mesajını ayarlama
-setButton.addEventListener('click', () => {
-  userMessage = userInput.value.trim() || userMessage;
-  alert("Mesaj ayarlandı! Kalbe tıklayın.");
-});
+// İkinci mesajı burada belirle
+const secondMessage = `
+     Canım sevgilim bugün benim için en mutlu gün.
+     Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.
+     Geleceğim, seninle olduğum her gün, saat, dakika, saniye farketmeksizin seninle olacağım için çok mutluyum.
+     Bu mutluluğumuzu her daim yaşamak dileğiyle... 
+     Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki 
+  benimlesin.  ❤️
+`;
 
 // Küçük kalpler oluşturma (arka planda)
 function createSmallHeart() {
@@ -88,7 +88,7 @@ function createSparkle(element) {
 
 // Kalbe tıklayınca mesajlar
 heart.addEventListener('click', () => {
-  // İlk mesaj
+  // İlk kısa mesaj
   messageTop.textContent = "Seni Seviyorum 💖";
   messageTop.classList.add('show');
 
@@ -99,8 +99,8 @@ heart.addEventListener('click', () => {
     heart.style.animationPlayState = 'paused';
     clearInterval(heartInterval);
 
-    // Typewriter ile kullanıcı mesajı ve parlayan kalpler
-    typeWriter(userMessage, messageBottom, 50);
+    // Typewriter ile ikinci uzun mesaj ve parlayan kalpler
+    typeWriter(secondMessage, messageBottom, 50);
 
   }, 2000);
 });
