@@ -76,7 +76,7 @@ body {
 
 #message-bottom {
   top: calc(50% + 80px);
-  font-size: 4vw;
+  font-size: 1vw;
   line-height: 1.4;
 }
 
