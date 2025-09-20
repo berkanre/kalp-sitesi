@@ -5,12 +5,13 @@ const messageBottom = document.getElementById('message-bottom');
 
 let heartInterval = null;
 
-// İkinci mesaj (burayı kendin istediğin gibi yazabilirsin)
+// İkinci mesaj
 const secondMessage = `
-Canım sevgilim bugün benim için en mutlu gün. Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.
+Canım sevgilim bugün benim için en mutlu gün. 
+Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.
 Geleceğim, seninle olduğum her gün, saat, dakika, saniye farketmeksizin seninle olacağım için çok mutluyum.
 Bu mutluluğumuzu her daim yaşamak dileğiyle... 
-Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki benimlesin.  ❤️
+Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki benimlesin. ❤️
 `;
 
 // Küçük kalpler oluşturma
@@ -53,16 +54,13 @@ function typeWriter(text, element, delay = 50) {
   const interval = setInterval(() => {
     element.textContent += text.charAt(i);
     i++;
-    if (i >= text.length) {
-      clearInterval(interval);
-    }
+    if (i >= text.length) clearInterval(interval);
   }, delay);
 }
 
-
 // Tıklama olayı
 heart.addEventListener('click', () => {
-  // İlk mesaj
+  // 1. mesaj en üstte
   messageTop.textContent = "Seni Seviyorum 💖";
   messageTop.classList.add('show');
 
@@ -73,9 +71,9 @@ heart.addEventListener('click', () => {
     heart.style.animationPlayState = 'paused';
     clearInterval(heartInterval);
 
-    // İkinci mesaj doğrudan göster
-    messageBottom.textContent = secondMessage;
+    // 2. mesaj typewriter ile kalbin altında
     messageBottom.classList.add('show');
+    typeWriter(secondMessage, messageBottom, 50);
 
   }, 2000);
 });
