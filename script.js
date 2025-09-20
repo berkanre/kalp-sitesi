@@ -5,7 +5,7 @@ const messageBottom = document.getElementById('message-bottom');
 
 let heartInterval = null;
 
-// İkinci mesaj burada yazılıyor
+// İkinci mesaj burada
 const secondMessage = `
 Sen benim hayatımdaki en değerli kişisin. 
 Her anımda seni düşünüyorum ve kalbim her zaman seninle atıyor. 
@@ -13,7 +13,7 @@ Seninle geçirdiğim her saniye, dünyanın en güzel anı gibi geliyor.
 Seni her şeyden çok seviyorum ❤️
 `;
 
-// Küçük kalpler oluşturma (arka planda)
+// Küçük kalpler oluşturma
 function createSmallHeart() {
   const smallHeart = document.createElement('div');
   smallHeart.classList.add('small-heart');
@@ -31,13 +31,12 @@ function createSmallHeart() {
 
 heartInterval = setInterval(createSmallHeart, 300);
 
-// Hover veya dokunma ile kalp büyümesi ve ses
+// Kalp büyüme + ses
 function playHeart() {
   heart.style.transform = 'rotate(-45deg) scale(1.5)';
   sound.currentTime = 0;
   sound.play();
 }
-
 function resetHeart() {
   heart.style.transform = 'rotate(-45deg) scale(1)';
 }
@@ -47,9 +46,9 @@ heart.addEventListener('mouseleave', resetHeart);
 heart.addEventListener('touchstart', (e) => { e.preventDefault(); playHeart(); });
 heart.addEventListener('touchend', resetHeart);
 
-// Kalbe tıklanınca mesajlar
+// Tıklama olayı
 heart.addEventListener('click', () => {
-  // İlk kısa mesaj
+  // İlk mesaj
   messageTop.textContent = "Seni Seviyorum 💖";
   messageTop.classList.add('show');
 
@@ -60,7 +59,7 @@ heart.addEventListener('click', () => {
     heart.style.animationPlayState = 'paused';
     clearInterval(heartInterval);
 
-    // İkinci mesaj direkt gösterilecek
+    // İkinci mesaj doğrudan göster
     messageBottom.textContent = secondMessage;
     messageBottom.classList.add('show');
 
