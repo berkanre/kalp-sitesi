@@ -8,12 +8,10 @@ let sparkleInterval = null;
 
 // İkinci mesajı burada belirle
 const secondMessage = `
-     Canım sevgilim bugün benim için en mutlu gün.
-     Bu mutluluğu nasıl anlatmak gerekir bilmiyorum.
-     Geleceğim, seninle olduğum her gün, saat, dakika, saniye farketmeksizin seninle olacağım için çok mutluyum.
-     Bu mutluluğumuzu her daim yaşamak dileğiyle... 
-     Seni çok seviyorum canım sevgilim. İyi ki doğdun, iyi ki 
-  benimlesin.  ❤️
+Sen benim hayatımdaki en değerli kişisin. 
+Her anımda seni düşünüyorum ve kalbim her zaman seninle atıyor. 
+Seninle geçirdiğim her saniye, dünyanın en güzel anı gibi geliyor. 
+Seni her şeyden çok seviyorum ❤️
 `;
 
 // Küçük kalpler oluşturma (arka planda)
