@@ -5,7 +5,7 @@ const messageBottom = document.getElementById('message-bottom');
 
 let heartInterval = null;
 
-// İkinci mesaj burada
+// İkinci mesaj (burayı kendin istediğin gibi yazabilirsin)
 const secondMessage = `
 Sen benim hayatımdaki en değerli kişisin. 
 Her anımda seni düşünüyorum ve kalbim her zaman seninle atıyor. 
