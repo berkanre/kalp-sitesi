@@ -3,7 +3,6 @@ body {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
@@ -18,7 +17,7 @@ body {
   100% {background-position: 0% 50%;}
 }
 
-/* 3D Kalp */
+/* Kalp */
 .heart-real {
   position: relative;
   width: 25vw;
@@ -57,7 +56,6 @@ body {
   position: absolute;
   width: 90%;
   text-align: center;
-  font-size: 5vw;
   color: white;
   text-shadow: 0 2px 5px rgba(0,0,0,0.5);
   opacity: 0;
@@ -65,19 +63,25 @@ body {
   pointer-events: none;
   word-wrap: break-word;
   white-space: pre-wrap;
-  z-index: 999;  /* 🔥 Mesajlar artık kalbin üstünde */
+  z-index: 999;
 }
-
 
 #message-top.show, #message-bottom.show {
   opacity: 1;
   transform: scale(1.2);
 }
 
+/* 1. mesaj (kalbin üstünde) */
+#message-top {
+  top: calc(50% - 150px);
+  font-size: 5vw;
+}
+
+/* 2. mesaj (kalbin altında) */
 #message-bottom {
-  top: calc(50% + 80px);
-  font-size: 1vw;
-  line-height: 1.4;
+  top: calc(50% + 150px);
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.5;
 }
 
 /* Küçük kalpler */
